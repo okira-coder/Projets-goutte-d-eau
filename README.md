@@ -90,6 +90,14 @@ Le **Projet Goutte d'eau** vise à refondre les algorithmes de prévision de plu
 - **Tests** : pytest + pytest-cov
 - **Lint/format** : ruff + black
 
+## 🖼️ Aperçu de l'interface
+
+| Page d'accueil | Prédiction Montpellier (détails JSON) | Prédiction Carcassonne |
+|---|---|---|
+| ![Accueil](screenshots/streamlit_initial.png) | ![Montpellier](screenshots/streamlit_prediction_montpellier.png) | ![Carcassonne](screenshots/streamlit_prediction_carcassonne.png) |
+
+**Cohérence métier observée** : Carcassonne (9.4 % de proba de pluie) ressort 4.5× plus haut que Montpellier (2.1 %) — cohérent avec l'EDA qui montre Carcassonne 2.8× plus pluvieuse historiquement (32.6 % de jours pluvieux vs 13 %).
+
 ## 🚀 Démarrage rapide
 
 ### Pré-requis
