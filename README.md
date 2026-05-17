@@ -29,42 +29,13 @@ Le **Projet Goutte d'eau** vise à refondre les algorithmes de prévision de plu
 
 ## 🏗️ Architecture
 
-```
-┌─────────────────────────┐
-│  👨‍🌾 Agriculteur          │
-└───────────┬─────────────┘
-            │ HTTP
-            ▼
-┌─────────────────────────┐
-│  Streamlit UI (8501)    │  ← Démonstrateur
-└───────────┬─────────────┘
-            │ HTTP/JSON
-            ▼
-┌─────────────────────────┐
-│   FastAPI (8000)        │
-│   /predict /health      │
-│   /stations /docs       │
-└─────┬───────────┬───────┘
-      │           │
-      ▼           ▼
-┌──────────┐ ┌──────────────┐
-│ BDD SQL  │ │ Modèle .pkl  │
-│ SQLite / │ │ XGBoost      │
-│ MySQL    │ │ chargé RAM   │
-└────▲─────┘ └──────▲───────┘
-     │              │
-     │       ┌──────┴──────────┐
-     │       │ ml_training     │
-     │       └──────▲──────────┘
-     │              │
-     │       ┌──────┴──────────┐
-     │       │ build_features  │ ← Single Source of Truth (train + serve)
-     │       └──────▲──────────┘
-     │              │
-     │      ┌───────┴──────────┐
-     └──────┤ data_ingestion   │ ← API Météo France SYNOP
-            └──────────────────┘
-```
+### Diagramme d'architecture — vue runtime
+
+![Architecture runtime](reports/figures/diagramme_architecture.png)
+
+### Diagramme de composants — vue logique
+
+![Composants logiques](reports/figures/diagramme_composants.png)
 
 **5 composants Python isolés** :
 
