@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+
+# Modèles & artefacts (régénérables via `make train`)
+models/*.pkl
+!models/.gitkeep
+
+# Données SQLite (régénérables via `make db-init` + `make ingest`)
+data/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+
+# Notebooks (checkpoints)
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MySQL dumps
+*.sql.gz
+
+# Coverage / tests
+.coverage
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Emissions tracking (codecarbon)
+emissions.csv
